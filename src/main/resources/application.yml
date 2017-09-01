@@ -1,0 +1,9 @@
+spring:
+  mvc:
+    view:
+      # 页面默认前缀目录
+      prefix: /WEB-INF/view/
+      # 响应页面默认后缀
+      suffix: .jsp
+    #默认springboot会映射 /**
+    static-path-pattern: /static/**
