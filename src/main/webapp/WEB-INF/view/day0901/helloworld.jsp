@@ -17,6 +17,9 @@
 <body>
     <div id="example1"></div>
     <div id="example2"></div>
+    <div id="example3"></div>
+    <div id="example4"></div>
+
 </body>
 </html>
 <script type="text/babel">
@@ -37,5 +40,23 @@ ReactDOM.render(
         }
     </div>,
     document.getElementById("example2")
+);
+//JSX 允许直接在模板插入 JavaScript 变量。如果这个变量是一个数组，则会展开这个数组的所有成员
+ReactDOM.render(
+    <div>{names}</div>,
+    document.getElementById("example3")
+)
+//React 允许将代码封装成组件（component），然后像插入普通 HTML 标签一样，在网页中插入这个组件。
+//React.createClass 方法就用于生成一个组件类
+//所有组件类都必须有自己的 render 方法，用于输出组件
+//组件类的第一个字母必须大写，否则会报错;组件类只能包含一个顶层标签，否则也会报错。
+var HelloMessage = React.createClass({
+    render:function () {
+        return <h1>hello {this.props.name}</h1>
+    }
+});
+ReactDOM.render(
+    <HelloMessage name="leon"/>,
+    document.getElementById("example4")
 )
 </script>
